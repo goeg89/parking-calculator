@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
     <style>
         h2 {
-    color: #3e613e; font-size: 24px; font-weight: normal;
-}
+            color: #3e613e; font-size: 24px; font-weight: normal;
+        }
 
         body {
             font-family: 'Oswald', sans-serif;
@@ -71,6 +71,7 @@
     <div class="details" id="details"></div>
 
     <script>
+        // Функция для расчета стоимости парковки
         function calculateParking() {
             let entryTime = new Date(document.getElementById("entry").value);
             let exitTime = new Date(document.getElementById("exit").value);
@@ -117,6 +118,14 @@
             if (daysAt100 > 0) detailsText += `${daysAt100} × 100 руб = ${daysAt100 * 100} руб<br>`;
 
             document.getElementById("details").innerHTML = detailsText;
+        }
+
+        // Прокрутка страницы к блоку с id="calculator"
+        window.onload = function() {
+            // Если в URL есть якорь, прокручиваем к нужному блоку
+            if (window.location.hash === "#calculator") {
+                document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+            }
         }
     </script>
 
