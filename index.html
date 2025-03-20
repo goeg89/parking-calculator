@@ -7,10 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
     <style>
         h2 {
-            color: #3e613e;
-            font-size: 24px;
-            font-weight: normal;
-        }
+    color: #3e613e; font-size: 24px; font-weight: normal;
+}
 
         body {
             font-family: 'Oswald', sans-serif;
@@ -19,12 +17,10 @@
             padding: 0px;
             max-width: 400px;
         }
-
         label {
             display: block;
             margin-top: 10px;
         }
-
         input {
             width: 100%;
             padding: 8px;
@@ -33,7 +29,6 @@
             border-radius: 5px;
             display: block;
         }
-
         button {
             width: 100%;
             padding: 10px;
@@ -45,30 +40,22 @@
             font-size: 16px;
             margin-top: 10px;
         }
-
         button:hover {
             background-color: #355335;
         }
-
-        .result,
-        .details {
+        .result, .details {
             margin-top: 20px;
             font-size: 18px;
             font-weight: normal;
             color: #333;
         }
-
         .details {
             font-size: 14px;
             color: #555;
         }
-
-        html {
-            scroll-padding-top: 100px; /* Компенсируем высоту фиксированной шапки */
-        }
     </style>
 </head>
-<body id="calculator">
+<body>
 
     <h2>Калькулятор стоимости парковки</h2>
 
@@ -84,7 +71,6 @@
     <div class="details" id="details"></div>
 
     <script>
-        // Функция для расчета стоимости парковки
         function calculateParking() {
             let entryTime = new Date(document.getElementById("entry").value);
             let exitTime = new Date(document.getElementById("exit").value);
@@ -131,24 +117,6 @@
             if (daysAt100 > 0) detailsText += `${daysAt100} × 100 руб = ${daysAt100 * 100} руб<br>`;
 
             document.getElementById("details").innerHTML = detailsText;
-        }
-
-        // Прокрутка страницы к блоку с id="calculator" при загрузке страницы
-        window.onload = function() {
-            if (window.location.hash === "#calculator") {
-                setTimeout(function() {
-                    document.getElementById("calculator").scrollIntoView({
-                        behavior: "smooth"
-                    });
-                }, 100); // Задержка перед прокруткой
-            }
-        }
-
-        // Прокрутка страницы к элементу при переходе по ссылке
-        function scrollToCalculator() {
-            document.getElementById("calculator").scrollIntoView({
-                behavior: "smooth"
-            });
         }
     </script>
 
