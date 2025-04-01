@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
     <style>
         h2 {
-    color: #3e613e; font-size: 24px; font-weight: normal;
-}
+            color: #3e613e; font-size: 24px; font-weight: normal;
+        }
 
         body {
             font-family: 'Oswald', sans-serif;
@@ -29,6 +29,17 @@
             border-radius: 5px;
             display: block;
         }
+
+        /* Добавлено для изменения ширины окон ввода даты и времени */
+        input[type="datetime-local"] {
+            width: 100%;  /* Устанавливает ширину на 100% от родительского контейнера */
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+        }
+
         button {
             width: 100%;
             padding: 10px;
